@@ -87,7 +87,7 @@ This section demonstrate how to launch CAA and also using GAT to derive a robust
 In [getting_started.ipynb](getting_started.ipynb), we provide a step-by-step demonstration showing how to launch our composite adversarial attack (CAA).
 We use the CIFAR-10 dataset for demonstration, while other datasets could be executed similarly.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IBM/composite-adv/blob/main/getting_started.ipynb)
+[![Open In Colab](figures/colab-badge.svg)](https://colab.research.google.com/github/IBM/composite-adv/blob/main/getting_started.ipynb)
 
 ## Scripts for running the experiments
 ### Composite Adversarial Attack (CAA) Evaluation
@@ -177,7 +177,10 @@ We maintain the [leaderboards](https://hsiung.cc/CARBEN/) to track the progress 
 **Compositional Adversarial Robustness**. Specifically, we focus on "white-box" scenarios in which the attacker has all
 knowledge of the models. We have provided similar entries to those in the RobustBench leaderboard, and hereby solicit 
 model submissions to compete against composite perturbations in our leaderboard. If you would like to submit your model,
-please fill out the [Google Form](https://forms.gle/nNhPgQiq2jyyUCmA7).
+please follow the instructions in [CARBEN-Leaderboard.ipynb](CARBEN-Leaderboard.ipynb) to evaluate your model. After the
+robustness assessment is completed, please fill in the [Google Form](https://forms.gle/nNhPgQiq2jyyUCmA7), and we will 
+update the leaderboard after confirmation.
+
 
 ## Citations
 If you find this helpful for your research, please cite our papers as follows:
