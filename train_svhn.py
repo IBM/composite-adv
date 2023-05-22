@@ -10,7 +10,7 @@ import torch.nn.parallel
 from torch.autograd import Variable
 from torchvision import transforms
 from composite_adv.attacks import *
-from composite_adv.utilities import make_dataloader, EvalModel
+from composite_adv.utilities import make_dataloader
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')

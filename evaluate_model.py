@@ -11,15 +11,11 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 import torch.nn.parallel
 from composite_adv.attacks import *
-from composite_adv.utilities import make_dataloader, EvalModel
+from composite_adv.utilities import make_dataloader
 from math import pi
 import warnings
 
 warnings.filterwarnings('ignore')
-dataset_normalizer = {'cifar10': {'mean': [0.4914, 0.4822, 0.4465], 'std': [0.2023, 0.1994, 0.2010]},
-                      'imagenet': {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]},
-                      'svhn': None}
-
 
 def list_type(s):
     return tuple(sorted(map(int, s.split(','))))
@@ -34,8 +30,6 @@ parser.add_argument('--arch', type=str, default='resnet50',
                     help='model architecture')
 parser.add_argument('--checkpoint', type=str, default=None,
                     help='checkpoint path')
-parser.add_argument('--input-normalized', default=False, action='store_true',
-                    help='model is trained for normalized data')
 parser.add_argument('--dataset', type=str, default='cifar10', choices=['cifar10', 'imagenet', 'svhn'],
                     help='dataset name')
 parser.add_argument('--dataset-path', type=str, default='../data',
@@ -112,16 +106,13 @@ def main_worker(gpu, ngpus_per_node, args):
         builtins.print = print_pass
 
     from composite_adv.utilities import make_model
-    base_model = make_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
+    model = make_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
     # Uncomment the following if you want to load their checkpoint to finetuning
     # from composite_adv.utilities import make_madry_model, make_trades_model
-    # base_model = make_madry_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
-    # base_model = make_trades_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
-    # base_model = make_pat_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
-    # base_model = make_fast_at_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
-
-    model = EvalModel(base_model, normalize_param=dataset_normalizer[args.dataset],
-                      input_normalized=args.input_normalized)
+    # model = make_madry_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
+    # model = make_trades_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
+    # model = make_pat_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
+    # model = make_fast_at_model(args.arch, args.dataset, checkpoint_path=args.checkpoint)
 
     attack_names: List[str] = args.attacks
     attacks = []

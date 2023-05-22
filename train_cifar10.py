@@ -12,7 +12,7 @@ import torch.nn.parallel
 from torch.autograd import Variable
 from torchvision import transforms
 from composite_adv.attacks import *
-from composite_adv.utilities import make_dataloader, EvalModel
+from composite_adv.utilities import make_dataloader
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
@@ -145,15 +145,11 @@ def main_worker(gpu, ngpus_per_node, args):
         builtins.print = print_pass
 
     from composite_adv.utilities import make_model
-    base_model = make_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
+    model = make_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
     # Uncomment the following if you want to load their checkpoint to finetuning
     # from composite_adv.utilities import make_madry_model, make_trades_model
-    # base_model = make_madry_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
-    # base_model = make_trades_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
-
-    model = EvalModel(base_model,
-                      normalize_param={'mean': [0.4914, 0.4822, 0.4465], 'std': [0.2023, 0.1994, 0.2010]},
-                      input_normalized=True)
+    # model = make_madry_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
+    # model = make_trades_model(args.arch, 'cifar10', checkpoint_path=args.checkpoint)
 
     # Send to GPU
     if not torch.cuda.is_available():

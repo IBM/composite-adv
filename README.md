@@ -51,13 +51,11 @@ Please use `composite_adv.utilities.make_model()` to load GAT pre-trained models
 ### CIFAR-10
 Two Architectures Available: ResNet-50 ($\dagger$) and Wide-ResNet-34-10 ($\ast$).
 
-| $\text{GAT}^\dagger\text{-f}$ | $\text{GAT}^\dagger\text{-fs}$ | $\text{GAT}^\ast\text{-f}$|$\text{GAT}^\ast\text{-fs}$|
-|--|--|--|--|
-| [Link](https://drive.google.com/file/d/1M569sLluA_nCKzkeKMaK_4PCII3LKKnJ/)| [Link](https://drive.google.com/file/d/1109eOxG5sSIxCwe_BUKRViMrSF20Ac4c/) | [Link](https://drive.google.com/file/d/1Js1v5W_m40SjS_tYEMQF72n37_AxQZY0/) |[Link](https://drive.google.com/file/d/1hWcgfvQUTOgDpvmZg4kTJLakSIdm-Tlx/)|
-| $\text{Normal}^\dagger$ | $\text{Madry}_\infty^\dagger$ | $\text{PAT}_\text{self}^\dagger$ | $\text{PAT}_\text{alex}^\dagger$ | 
-| [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) | 
-| $\text{Normal}^\ast$ | $\text{Trades}_\infty^\ast$ | $\text{FAT}_\infty^\ast$ | $\text{AWP}_\infty^\ast$ |
-| [Link](https://drive.google.com/file/d/14WZa--L9lIaEZuUCWhvbrtk46uZVN3rO/) | [Link](https://github.com/yaodongyu/TRADES) | [Link](https://github.com/zjfheart/Friendly-Adversarial-Training) | [Link](https://github.com/csdongxian/AWP) |
+| $\text{GAT}^\dagger\text{-f}$ | $\text{GAT}^\dagger\text{-fs}$ | $\text{Normal}^\dagger$ | $\text{Madry}_\infty^\dagger$ | $\text{PAT}_\text{self}^\dagger$ | $\text{PAT}_\text{alex}^\dagger$ |
+|--|--|--|--|--|--|
+| [Link](https://drive.google.com/file/d/1M569sLluA_nCKzkeKMaK_4PCII3LKKnJ/)| [Link](https://drive.google.com/file/d/1109eOxG5sSIxCwe_BUKRViMrSF20Ac4c/) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) |
+|  $\text{GAT}^\ast\text{-f}$|$\text{GAT}^\ast\text{-fs}$| $\text{Normal}^\ast$ | $\text{Trades}_\infty^\ast$ | $\text{FAT}_\infty^\ast$ | $\text{AWP}_\infty^\ast$ |
+| [Link](https://drive.google.com/file/d/1Js1v5W_m40SjS_tYEMQF72n37_AxQZY0/) |[Link](https://drive.google.com/file/d/1hWcgfvQUTOgDpvmZg4kTJLakSIdm-Tlx/) | [Link](https://drive.google.com/file/d/14WZa--L9lIaEZuUCWhvbrtk46uZVN3rO/) | [Link](https://github.com/yaodongyu/TRADES) | [Link](https://github.com/zjfheart/Friendly-Adversarial-Training) | [Link](https://github.com/csdongxian/AWP) |
 
 
 ### ImageNet
@@ -67,7 +65,7 @@ One Architecture Available: ResNet-50 ($\dagger$).
 
 | $\text{GAT}^\dagger\text{-f}$ | $\text{Normal}^\dagger$ | $\text{Madry}_\infty^\dagger$ | $\text{FAST-AT}_\infty^\dagger$|
 |--|--|--|--|
-| [Link](https://drive.google.com/file/d/1PSmy_DrTExna_x4s_Lnuk6UnBFGh9X41/)| [Link](https://github.com/MadryLab/robustness)| [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) |
+| [Link](https://drive.google.com/file/d/1PSmy_DrTExna_x4s_Lnuk6UnBFGh9X41/)| [Link](https://github.com/MadryLab/robustness)| [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/locuslab/fast_adversarial) |
 
 ### SVHN
 One Architectures Available: Wide-ResNet-34-10 ($\ast$).
@@ -96,7 +94,7 @@ Evaluate robust accuracy / attack success rate of the model
 ```shell
 python evaluate_model.py \
        --arch ARCHITECTURE --checkpoint PATH_TO_MODEL \
-       --dataset DATASET_NAME --dataset-path DATASET_PATH --input-normalized \
+       --dataset DATASET_NAME --dataset-path DATASET_PATH \
        --message MESSAGE_TO_PRINT_IN_CSV \
        --batch-size BATCH_SIZE --output RESULT.csv \
         "CompositeAttack(model, enabled_attack=(0,1,5), order_schedule='random', inner_iter_num=10, dataset='DATASET_NAME')" \
@@ -115,7 +113,7 @@ python evaluate_model.py \
 ```shell
 python evaluate_model.py \
        --arch ARCHITECTURE --checkpoint PATH_TO_MODEL \
-       --dataset DATASET_NAME --dataset-path DATASET_PATH --input-normalized \
+       --dataset DATASET_NAME --dataset-path DATASET_PATH \
        --message MESSAGE_TO_PRINT_IN_CSV \
        --batch-size BATCH_SIZE --output RESULT.csv \
         "NoAttack()" \

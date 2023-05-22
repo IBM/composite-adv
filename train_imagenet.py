@@ -12,7 +12,7 @@ import torch.multiprocessing as mp
 import torch.nn.parallel
 from torch.autograd import Variable
 from composite_adv.attacks import *
-from composite_adv.utilities import make_dataloader, EvalModel
+from composite_adv.utilities import make_dataloader
 from composite_adv.data_augmentation import TRAIN_TRANSFORMS_IMAGENET, TEST_TRANSFORMS_IMAGENET
 import numpy as np
 import warnings
@@ -170,14 +170,10 @@ def main_worker(gpu, ngpus_per_node, args):
         builtins.print = print_pass
 
     from composite_adv.utilities import make_model
-    base_model = make_model(args.arch, 'imagenet', checkpoint_path=args.checkpoint)
+    model = make_model(args.arch, 'imagenet', checkpoint_path=args.checkpoint)
     # Uncomment the following if you want to load their checkpoint to finetuning
     # from composite_adv.utilities import make_madry_model, make_trades_model
-    # base_model = make_madry_model(args.arch, 'imagenet', checkpoint_path=args.checkpoint)
-
-    model = EvalModel(base_model,
-                      normalize_param={'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]},
-                      input_normalized=True)
+    # model = make_madry_model(args.arch, 'imagenet', checkpoint_path=args.checkpoint)
 
     # Send to GPU
     if not torch.cuda.is_available():
