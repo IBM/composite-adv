@@ -31,6 +31,16 @@ and/or natural-looking, but nevertheless result in large differences in $\ell_{p
 
 In this README, we are going to show how to execute our code and derive the experimental results in our paper.
 
+## Environment
+- cuda 11.3
+- python 3.7.16
+- numpy 1.21.6
+- pytorch 1.12.0
+- torchvision 0.13.0
+- kornia 0.6.3
+- requests 
+
+
 ## Installation
 Composite-adv can be downloaded as a GitHub repository or a package, the code including training (GAT) and robustness evaluation (CAA) phases.
 
