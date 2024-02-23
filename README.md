@@ -63,9 +63,9 @@ Two Architectures Available: ResNet-50 ($\dagger$) and Wide-ResNet-34-10 ($\ast$
 
 | $\text{GAT}^\dagger\text{-f}$ | $\text{GAT}^\dagger\text{-fs}$ | $\text{Normal}^\dagger$ | $\text{Madry}_\infty^\dagger$ | $\text{PAT}_\text{self}^\dagger$ | $\text{PAT}_\text{alex}^\dagger$ |
 |--|--|--|--|--|--|
-| [Link](https://drive.google.com/file/d/1M569sLluA_nCKzkeKMaK_4PCII3LKKnJ/)| [Link](https://drive.google.com/file/d/1109eOxG5sSIxCwe_BUKRViMrSF20Ac4c/) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) |
+| [Link](https://drive.google.com/file/d/1mRkSYN8WVUkBHDUSCnjt8tHvZIFaNWg-/)| [Link](https://drive.google.com/file/d/1-CNguIejKc3Mm8D0lMYHIciYBWCZbQvf/) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) | [Link](https://github.com/cassidylaidlaw/perceptual-advex) |
 |  $\text{GAT}^\ast\text{-f}$|$\text{GAT}^\ast\text{-fs}$| $\text{Normal}^\ast$ | $\text{Trades}_\infty^\ast$ | $\text{FAT}_\infty^\ast$ | $\text{AWP}_\infty^\ast$ |
-| [Link](https://drive.google.com/file/d/1Js1v5W_m40SjS_tYEMQF72n37_AxQZY0/) |[Link](https://drive.google.com/file/d/1hWcgfvQUTOgDpvmZg4kTJLakSIdm-Tlx/) | [Link](https://drive.google.com/file/d/14WZa--L9lIaEZuUCWhvbrtk46uZVN3rO/) | [Link](https://github.com/yaodongyu/TRADES) | [Link](https://github.com/zjfheart/Friendly-Adversarial-Training) | [Link](https://github.com/csdongxian/AWP) |
+| [Link](https://drive.google.com/file/d/1iJXdbzvNbBsTuCOtxzjtWSPUBfWOnQ01/) |[Link](https://drive.google.com/file/d/19iy_r1jLbA7ldqSJSo4Ulk2w6U5w85JF/) | [Link](https://drive.google.com/file/d/17SZVVqbnVCmycK-HwbIF-OiS1IXvCDMt/) | [Link](https://github.com/yaodongyu/TRADES) | [Link](https://github.com/zjfheart/Friendly-Adversarial-Training) | [Link](https://github.com/csdongxian/AWP) |
 
 
 ### ImageNet
@@ -75,7 +75,7 @@ One Architecture Available: ResNet-50 ($\dagger$).
 
 | $\text{GAT}^\dagger\text{-f}$ | $\text{Normal}^\dagger$ | $\text{Madry}_\infty^\dagger$ | $\text{FAST-AT}_\infty^\dagger$|
 |--|--|--|--|
-| [Link](https://drive.google.com/file/d/1PSmy_DrTExna_x4s_Lnuk6UnBFGh9X41/)| [Link](https://github.com/MadryLab/robustness)| [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/locuslab/fast_adversarial) |
+| [Link](https://drive.google.com/file/d/1vwvjaonPeeyYMEdiIG3KEGE51DkwoXdW/)| [Link](https://github.com/MadryLab/robustness)| [Link](https://github.com/MadryLab/robustness) | [Link](https://github.com/locuslab/fast_adversarial) |
 
 ### SVHN
 One Architectures Available: Wide-ResNet-34-10 ($\ast$).
@@ -83,7 +83,7 @@ One Architectures Available: Wide-ResNet-34-10 ($\ast$).
 
 | $\text{GAT}^\ast\text{-f}$ | $\text{GAT}^\ast\text{-fs}$ | $\text{Normal}^\ast$ |$\text{Trades}_\infty^\ast$ |
 |--|--|--|--|
-| [Link](https://drive.google.com/file/d/1qqPtncIdSW8GVjwXg-HzlsgveANLmbe4/)| [Link](https://drive.google.com/file/d/160Ena0A7eeOjIprZ_1jsDKpcYz0HW_kp/)| [Link](https://drive.google.com/file/d/1786gOKewJ4VX24s1IPT9tr0-JeyeT1AQ/) |[Link](https://drive.google.com/file/d/11C7Sfh1KiO9TM_8Lpv6QopigzobXLmNz/) |
+| [Link](https://drive.google.com/file/d/16XORUNOrUZCkB17VoqqXT79fikTnmYPz/)| [Link](https://drive.google.com/file/d/1JArjUhbxr7HCJ-O-viseL3mwPVB6ic_f/)| [Link](https://drive.google.com/file/d/1aPIw6sqjpI5x1fbIKdcUa9o-lBNz5gg_/) |[Link](https://drive.google.com/file/d/1O1lui_3y3540bPKGSxCaV5afBdfgARgD/) |
 
 
 ## Usage
